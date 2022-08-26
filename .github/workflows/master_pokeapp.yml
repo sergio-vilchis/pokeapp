@@ -11,6 +11,10 @@ on:
 
 jobs:
   build:
+    env:
+      PORT: ${{ secrets.PORT}}
+      NODE_ENV: ${{ secrets.NODE_ENV}}
+      CONNECTION_STRING: ${{ secrets.CONNECTION_STRING}}
     runs-on: ubuntu-latest
 
     steps:
@@ -36,6 +40,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    env:
+      PORT: ${{ secrets.PORT}}
+      NODE_ENV: ${{ secrets.NODE_ENV}}
+      CONNECTION_STRING: ${{ secrets.CONNECTION_STRING}}
     environment:
       name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
