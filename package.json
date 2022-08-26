@@ -1,0 +1,39 @@
+{
+  "name": "@sergio-vilchis/pokeapp",
+  "version": "0.0.1",
+  "description": "[![Node.js CI](https://github.com/sergio-vilchis/pokeapp/actions/workflows/node.js.yml/badge.svg)](https://github.com/sergio-vilchis/pokeapp/actions/workflows/node.js.yml)\r [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sergio-vilchis_pokeapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sergio-vilchis_pokeapp)\r [![Dependency Review](https://github.com/sergio-vilchis/pokeapp/actions/workflows/dependency-review.yml/badge.svg)](https://github.com/sergio-vilchis/pokeapp/actions/workflows/dependency-review.yml)\r [![Deploy to Amazon ECS](https://github.com/sergio-vilchis/pokeapp/actions/workflows/aws.yml/badge.svg)](https://github.com/sergio-vilchis/pokeapp/actions/workflows/aws.yml)\r ## Sergio Vilchis Quintero pokeapp\r My personal pokeapp",
+  "main": "app.js",
+  "scripts": {
+    "test": "nyc --exclude \"app.js\" --reporter=lcov --reporter=text-summary mocha --recursive --exit --timeout 300000",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sergio-vilchis/pokeapp.git"
+  },
+  "publishConfig": {
+    "@sergio-vilchis:registry": "https://npm.pkg.github.com"
+  },
+  "author": "Sergio Vilchis Quintero",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergio-vilchis/pokeapp/issues"
+  },
+  "homepage": "https://github.com/sergio-vilchis/pokeapp#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "coverage": "^0.4.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.0",
+    "http": "^0.0.1-security",
+    "mocha": "^9.2.2",
+    "mongodb": "^4.8.1",
+    "request": "^2.88.2",
+    "supertest": "^6.2.3"
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
+  }
+}
