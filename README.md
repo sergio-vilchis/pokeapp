@@ -1,14 +1,27 @@
-[![Node.js CI](https://github.com/sergio-vilchis/pokeapp/actions/workflows/node.js.yml/badge.svg)](https://github.com/sergio-vilchis/pokeapp/actions/workflows/node.js.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=sergio-vilchis_pokeapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=sergio-vilchis_pokeapp)
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=sergio-vilchis_pokeapp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=sergio-vilchis_pokeapp)
-[![Build and deploy Node.js app to Azure Web App - Pokeapp](https://github.com/sergio-vilchis/pokeapp/actions/workflows/master_pokeapp.yml/badge.svg?branch=master)](https://github.com/sergio-vilchis/pokeapp/actions/workflows/master_pokeapp.yml)
-[![wakatime](https://wakatime.com/badge/user/d0c3dbf1-42ae-4182-b7ce-c2c7f7855c37/project/7239412e-1614-4608-b95a-38dc2b77d638.svg)](https://wakatime.com/badge/user/d0c3dbf1-42ae-4182-b7ce-c2c7f7855c37/project/7239412e-1614-4608-b95a-38dc2b77d638)
-## Pokeapp
+# Pokeapp
 
-### Getting started
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.0.
 
-#### Recommended tools
+## Development server
 
- - NodeJS
- - Visual Studio Code (optional)
- - Postman
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Code scaffolding
+
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+## Build
+
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Running unit tests
+
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+## Running end-to-end tests
+
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Further help
+
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
