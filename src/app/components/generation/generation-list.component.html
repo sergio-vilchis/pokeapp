@@ -1,0 +1,5 @@
+<h2>Generaciones</h2>
+
+<div *ngFor="let generation of generations" [className]="'generation'">
+  {{ generation.names | getTranslatedName:"es"}}
+</div>
