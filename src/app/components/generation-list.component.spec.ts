@@ -1,0 +1,44 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Generation } from '../models/generation.model';
+import { GenerationService } from '../services/generation/generation.service';
+import { AppComponent } from './../app.component';
+import { AppModule } from './../app.module';
+import { GenerationListComponent } from './generation/generation-list.component';
+
+describe('AppComponent', () => {
+  let generationComponent: GenerationListComponent;
+  let fixture: ComponentFixture<GenerationListComponent>;
+  let generations: Generation[];
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [
+        RouterTestingModule, AppModule
+      ],
+      declarations: [
+        AppComponent, GenerationListComponent
+      ],
+    }).compileComponents();
+    fixture = TestBed.createComponent(GenerationListComponent);
+    generationComponent = fixture.debugElement.componentInstance;
+  });
+
+  it('should have pokemon generations listed',async () => {
+    generationComponent.getGenerations();
+    generations = generationComponent.generations;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(generations.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('should have pokemon generations details',async () => {
+    generationComponent.getGenerations();
+    generations = generationComponent.generations;
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(generations[0].name).toEqual("generation i");
+    });
+  });
+});
