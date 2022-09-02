@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Generation } from '../models/generation.model';
-import { GenerationService } from '../services/generation/generation.service';
 import { AppComponent } from './../app.component';
 import { AppModule } from './../app.module';
 import { GenerationListComponent } from './generation/generation-list.component';

@@ -1,6 +1,6 @@
 export class Language{
 
-  constructor(id: number, name: String, official: boolean, iso639: String, iso3166: String){
+  constructor(id: number, name: string, official: boolean, iso639: string, iso3166: string){
     this.id = id;
     this.name = name;
     this.official = official;
@@ -9,8 +9,8 @@ export class Language{
   }
 
   id: number;
-  name: String;
+  name: string;
   official: boolean;
-  iso639: String;
-  iso3166: String;
+  iso639: string;
+  iso3166: string;
 }

@@ -1,10 +1,10 @@
 export class BasicURL{
 
-  constructor(url: String, name: String){
+  constructor(url: string, name: string){
     this.url = url;
     this.name = name;
   }
 
-  name: String;
-  url: String
+  name: string;
+  url: string
 }

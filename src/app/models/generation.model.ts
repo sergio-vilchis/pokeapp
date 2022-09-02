@@ -1,14 +1,14 @@
 import { Name } from "./name.model";
 
 export class Generation{
-  constructor(id:number,name:String, names:Name[]) {
+  constructor(id:number,name:string, names:Name[]) {
     this.id=id;
     this.name=name;
     this.names=names;
   }
 
   id: number;
-  name: String;
+  name: string;
   names: Name[];
   /*abilities: Ability[;]
   main_region: Region;

@@ -3,5 +3,5 @@ export class ServiceUtils{
     this.baseUrl = "https://pokeapi.co/api/v2/";
   }
 
-  baseUrl: String
+  baseUrl: string
 }
