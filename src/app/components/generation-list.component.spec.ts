@@ -23,21 +23,23 @@ describe('AppComponent', () => {
     generationComponent = fixture.debugElement.componentInstance;
   });
 
-  it('should have pokemon generations listed',async () => {
+  it('should have pokemon generations listed',(done: DoneFn)=> {
     generationComponent.getGenerations();
     generations = generationComponent.generations;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       expect(generations.length).toBeGreaterThan(0);
+      done();
     });
   });
 
-  it('should have pokemon generations details',async () => {
+  it('should have pokemon generations details',(done: DoneFn)=> {
     generationComponent.getGenerations();
     generations = generationComponent.generations;
     fixture.detectChanges();
     fixture.whenStable().then(() => {
-      expect(generations[0].name).toEqual("generation i");
+      expect(generations[0].name).toContain("generation")
+      done();
     });
   });
 });

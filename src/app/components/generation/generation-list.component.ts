@@ -21,7 +21,7 @@ export class GenerationListComponent {
 
    }
 
-   getGenerations(){
+   async getGenerations(){
     this.generationService.getGenerations()
     .subscribe((response:any) => {
 
@@ -29,7 +29,6 @@ export class GenerationListComponent {
         this.generationService.getGenerationsDetails(result.url)
         .subscribe((generation:Generation)=>{
           this.generations.push(generation);
-          console.log(generation);
         });
       });
     });
