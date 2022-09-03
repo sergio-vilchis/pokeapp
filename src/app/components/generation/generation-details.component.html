@@ -10,7 +10,7 @@
   <mat-divider inset></mat-divider>
   <h3>Pokedexes</h3>
   <mat-card-actions *ngIf="region !== undefined">
-    <button *ngFor="let pokedex of region.pokedexes" mat-button (click)="getPokedex(pokedex.url)">
+    <button (ngClass)="pokedex.name" *ngFor="let pokedex of region.pokedexes" mat-button (click)="getPokedex(pokedex.url)">
       {{pokedex.name | titlecase}}
     </button>
   </mat-card-actions>

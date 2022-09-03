@@ -18,6 +18,7 @@ export class GenerationDetailsComponent {
   @Input() generation: Generation;
   @Output() pokedexEvent = new EventEmitter<Pokedex>();
   region: Region;
+  pokedex: Pokedex;
 
   constructor(
     private regionService: RegionService,
@@ -26,17 +27,18 @@ export class GenerationDetailsComponent {
 
    }
 
-   async getRegion(){
+  async getRegion(){
     this.regionService.getRegionDetails(this.generation.main_region.url)
     .subscribe((response:any) => {
       this.region = response;
     });
    }
 
-   async getPokedex(url: string){
+  async getPokedex(url: string){
     this.pokedexService.getPokedexDetails(url)
     .subscribe((response:any) => {
-      this.pokedexEvent.emit(response);
+      this.pokedex = response;
+      this.pokedexEvent.emit(this.pokedex);
     });
    }
 

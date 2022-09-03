@@ -6,10 +6,7 @@ export class GetTranslatedDescription implements PipeTransform {
   transform(descriptions: Description[], language: string): string {
     let translatedDescription: string = "";
     descriptions.forEach(description => {
-      if(description.language.name===language){
-        translatedDescription = description.description;
-      }
-      else if(translatedDescription=="" && description.language.name=="en"){
+      if(description.language.name===language || (translatedDescription=="" && description.language.name=="en")){
         translatedDescription = description.description;
       }
     });

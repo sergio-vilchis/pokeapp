@@ -1,4 +1,4 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Generation } from '../../models/generation.model';
 import { AppComponent } from '../../app.component';
@@ -7,11 +7,13 @@ import { GenerationDetailsComponent } from './generation-details.component';
 import { Region } from 'src/app/models/region.model';
 import { Name } from 'src/app/models/name.model';
 import { BasicURL } from 'src/app/models/basic_url.model';
+import { Pokedex } from 'src/app/models/pokedex.model';
 
 describe('GenerationDetailsComponent', () => {
   let generationComponent: GenerationDetailsComponent;
   let fixture: ComponentFixture<GenerationDetailsComponent>;
   let region: Region;
+  let pokedex: Pokedex;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -32,6 +34,7 @@ describe('GenerationDetailsComponent', () => {
     generationComponent.getRegion();
     fixture.detectChanges();
     generationComponent.getPokedex(generation.main_region.url);
+    fixture.detectChanges();
   });
 
   it('should get region',(done: DoneFn)=> {
@@ -39,15 +42,6 @@ describe('GenerationDetailsComponent', () => {
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       region = generationComponent.region;
-      expect(region.names.length).toBeGreaterThan(0);
-      done();
-    });
-  });
-
-  it('should get pokedex',(done: DoneFn)=> {
-    generationComponent.getPokedex(region.pokedexes[0].url)
-    fixture.detectChanges();
-    fixture.whenStable().then(() => {
       expect(region.names.length).toBeGreaterThan(0);
       done();
     });

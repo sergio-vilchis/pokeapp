@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Injectable, Input } from '@angular/core';
 import { Pokedex } from 'src/app/models/pokedex.model';
 import { PokedexService } from 'src/app/services/pokedex/pokedex.service';
 
@@ -19,8 +19,4 @@ export class PokedexComponent {
   ) {
 
    }
-
-  ngOnInit(){
-
-  }
 }
