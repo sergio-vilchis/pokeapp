@@ -1,2 +1,12 @@
-<generation-list></generation-list>
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>{{title}}</span>
+  <span class="toolbar-spacer"></span>
+</mat-toolbar>
+<div class="main-container">
+  <generation-list (pokedexEvent)="pokedexFetch($event)"></generation-list>
+  <pokedex [pokedex]="pokedex"></pokedex>
+</div>
 <router-outlet></router-outlet>

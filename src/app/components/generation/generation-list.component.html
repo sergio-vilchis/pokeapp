@@ -1,5 +1,7 @@
 <h2>Generaciones</h2>
 
-<div *ngFor="let generation of generations" [className]="'generation'">
-  {{ generation.names | getTranslatedName:"es"}}
-</div>
+<mat-tab-group mat-align-tabs="center" (selectedIndexChange)="changedTab($event)">
+  <mat-tab *ngFor="let generation of generations" label='{{generation.names | getTranslatedName:"es"}}'>
+    <generation-details [generation]="generation" (pokedexEvent)="pokedexFetch($event)"></generation-details>
+  </mat-tab>
+</mat-tab-group>
