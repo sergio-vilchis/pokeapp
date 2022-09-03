@@ -9,6 +9,9 @@ export class GetTranslatedName implements PipeTransform {
       if(name.language.name===language){
         translatedName = name.name;
       }
+      else if(translatedName=="" && name.language.name=="en"){
+        translatedName = name.name;
+      }
     });
     return translatedName;
   }

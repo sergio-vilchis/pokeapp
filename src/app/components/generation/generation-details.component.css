@@ -1,0 +1,71 @@
+.generation-card {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.generation-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.poke-card{
+  background-color: #FB1B1B;
+  padding: 15px;
+  border-color: #DFDFDF;
+  border-width: 10px;
+  color: white;
+}
+
+.poke-subtitle{
+  color: #DFDFDF;
+}
+
+.region{
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 50%;
+  height: 50%;
+  min-width: 300px;
+  min-height: 300px;
+  text-shadow: white 0px 0px 2px;
+  font-size: 16px;
+  margin: 0 auto;
+  margin-top: 15px !important;
+}
+
+.kanto{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/96a6e381769399.5d096fa30e358.jpg);
+}
+
+.johto{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/d33aab99190865.5eecfdc2abbdd.jpg);
+}
+
+.hoenn{
+background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/406c3999191261.5eecff7986af0.jpg);
+}
+
+.sinnoh{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/95b31e99191597.5eed01057edea.jpg);
+}
+
+.unova{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/2a2e5236491351.571e99814fc95.png);
+}
+
+.kalos{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/64024a36786121.57293587d75ce.png);
+}
+
+.alola{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e93d6046037147.5845f07ebcaed.png);
+}
+
+.galar{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/201170134527451.61d72dc2796c1.jpg);
+}
+
+button{
+
+}

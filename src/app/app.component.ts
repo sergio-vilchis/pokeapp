@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Pokedex } from './models/pokedex.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'pokeapp';
+  title = 'Pokéapp';
+  pokedex: Pokedex;
+
+  pokedexFetch(pokedex: Pokedex){
+    this.pokedex = pokedex;
+  }
 }

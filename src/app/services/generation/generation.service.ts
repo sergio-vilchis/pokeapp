@@ -1,6 +1,6 @@
 import { Generation } from "src/app/models/generation.model";
 import { HttpClient } from '@angular/common/http';
-import { ServiceUtils } from "./services-utils.model";
+import { ServiceUtils } from "../services-utils.model";
 import { Injectable } from "@angular/core";
 
 @Injectable()
