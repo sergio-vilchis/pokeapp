@@ -1,8 +1,15 @@
-<mat-card class="example-card">
+<mat-card>
+  <div class="poke-card" style="background-color: {{pokemon_species!==undefined?pokemon_species.color.name:'white'}};"></div>
+  <div class="poke-header" style="background-color: {{pokemon_species!==undefined?pokemon_species.color.name:'white'}};"></div>
   <mat-card-title-group>
     <mat-card-title>#{{pokemon_entry.entry_number}}</mat-card-title>
-    <mat-card-subtitle>{{pokemon_entry.pokemon_species.name | titlecase}}</mat-card-subtitle>
-    <img *ngIf="pokemon!==undefined" img mat-card-md-image src="{{pokemon!==undefined?pokemon.sprites.front_default:'assets/loading.gif'}}" alt="{{pokemon!==undefined?pokemon.name:'loading'}}" >
+    <mat-card-subtitle class="poke-subtitle">
+      {{pokemon_entry.pokemon_species.name | titlecase}}
+      <div *ngIf="pokemon!==undefined">
+        <img class="{{type.type.name}} poke-type" *ngFor="let type of pokemon.types" src="assets/{{type.type.name}}.svg" alt="{{type.type.name}}"/>
+      </div>
+    </mat-card-subtitle>
+    <img class="poke-sprite" img mat-card-md-image src="{{pokemon!==undefined?pokemon.sprites.front_default:'assets/loading.gif'}}" alt="{{pokemon!==undefined?pokemon.name:'loading'}}" >
   </mat-card-title-group>
   <mat-card-content>
     <div *ngIf="pokemon_species!==undefined">
