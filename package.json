@@ -22,7 +22,7 @@
     "url": "https://github.com/sergio-vilchis/pokeapp/issues"
   },
   "homepage": "https://github.com/sergio-vilchis/pokeapp#readme",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^14.0.0-next.0",
     "@angular/cdk": "^14.2.0",
