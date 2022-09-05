@@ -41,6 +41,7 @@ describe('PokemonCardComponent', () => {
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       pokemon_species=pokemonCardComponent.pokemon_species
+      expect(pokemon_species).toBeDefined()
       done();
     });
   });
@@ -50,7 +51,7 @@ describe('PokemonCardComponent', () => {
     fixture.detectChanges();
     fixture.whenStable().then(() => {
       pokemon=pokemonCardComponent.pokemon
-      console.log(pokemon)
+      expect(pokemon).toBeDefined()
       done();
     });
   });

@@ -1,3 +1,4 @@
+import { BasicURL } from "./basic_url.model";
 import { FlavorTextEntry } from "./flavor_text_entry.model";
 import { PokemonSpeciesVariety } from "./pokemon_species_variety.model";
 
@@ -17,4 +18,5 @@ export class PokemonSpecies{
   forms_switchable: boolean;
   varieties: PokemonSpeciesVariety[];
   flavor_text_entries: FlavorTextEntry[];
+  color: BasicURL;
 }

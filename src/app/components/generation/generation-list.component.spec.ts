@@ -4,6 +4,8 @@ import { Generation } from '../../models/generation.model';
 import { AppComponent } from '../../app.component';
 import { AppModule } from '../../app.module';
 import { GenerationListComponent } from './generation-list.component';
+import { By } from '@angular/platform-browser';
+import { Pokedex } from 'src/app/models/pokedex.model';
 
 describe('GenerationListComponent', () => {
   let generationComponent: GenerationListComponent;
@@ -42,4 +44,27 @@ describe('GenerationListComponent', () => {
       done();
     });
   });
+
+  it('should emit on changedTab', (done: DoneFn)=> {
+    generationComponent.getGenerations();
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      spyOn(generationComponent.pokedexEvent, 'emit');
+      generationComponent.changedTab(0);
+      expect(generationComponent.pokedexEvent.emit).toHaveBeenCalledWith(undefined);
+      done();
+    });
+ });
+
+ it('should emit with Pokedex', (done: DoneFn)=> {
+  generationComponent.getGenerations();
+  fixture.detectChanges();
+  fixture.whenStable().then(() => {
+    spyOn(generationComponent.pokedexEvent, 'emit');
+    let pokedex = new Pokedex();
+    generationComponent.pokedexFetch(pokedex);
+    expect(generationComponent.pokedexEvent.emit).toHaveBeenCalledWith(pokedex);
+    done();
+  });
+});
 });

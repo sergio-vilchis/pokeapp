@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
+import { Pokedex } from './models/pokedex.model';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -32,5 +33,14 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h2')?.textContent).toContain('Generaciones');
+  });
+
+  it('should emit with Pokedex', (done: DoneFn)=> {
+    const fixture = TestBed.createComponent(AppComponent);
+    let appComponent: AppComponent = fixture.debugElement.componentInstance;
+    let pokedex: Pokedex = new Pokedex();
+    appComponent.pokedexFetch(pokedex);
+    expect(pokedex).toEqual(appComponent.pokedex);
+    done();
   });
 });
