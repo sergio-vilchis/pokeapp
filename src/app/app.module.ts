@@ -17,6 +17,10 @@ import { PokedexComponent } from './components/pokedex/pokedex.component';
 import { GetTranslatedDescription } from './pipes/translated_description.pipe';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatGridListModule} from '@angular/material/grid-list';
+import { PokemonCardComponent } from './components/pokemon_card/pokemon_card.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { GetTranslatedFlavorText } from './pipes/translated_flavor_text.pipe';
 
 @NgModule({
   declarations: [
@@ -24,8 +28,10 @@ import {MatIconModule} from '@angular/material/icon';
     GenerationListComponent,
     GenerationDetailsComponent,
     PokedexComponent,
+    PokemonCardComponent,
     GetTranslatedName,
-    GetTranslatedDescription
+    GetTranslatedDescription,
+    GetTranslatedFlavorText
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,9 @@ import {MatIconModule} from '@angular/material/icon';
     MatButtonModule,
     MatDividerModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule,
+    FlexLayoutModule
   ],
   providers: [ServiceUtils],
   bootstrap: [AppComponent]

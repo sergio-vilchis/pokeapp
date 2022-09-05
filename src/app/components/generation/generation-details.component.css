@@ -65,3 +65,9 @@ background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/max_1200
 .galar{
   background-image: url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/201170134527451.61d72dc2796c1.jpg);
 }
+
+button{
+    border-radius: 5px;
+    border-color: red;
+    border-style: groove;
+}

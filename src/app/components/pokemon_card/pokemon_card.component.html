@@ -1,0 +1,12 @@
+<mat-card class="example-card">
+  <mat-card-title-group>
+    <mat-card-title>#{{pokemon_entry.entry_number}}</mat-card-title>
+    <mat-card-subtitle>{{pokemon_entry.pokemon_species.name | titlecase}}</mat-card-subtitle>
+    <img *ngIf="pokemon!==undefined" img mat-card-md-image src="{{pokemon!==undefined?pokemon.sprites.front_default:'assets/loading.gif'}}" >
+  </mat-card-title-group>
+  <mat-card-content>
+    <div *ngIf="pokemon_species!==undefined">
+      {{ pokemon_species.flavor_text_entries | getTranslatedFlavorText:"es"}}
+    </div>
+  </mat-card-content>
+</mat-card>
