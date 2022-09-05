@@ -1,3 +1,9 @@
-<div *ngIf="pokedex !== undefined">
-  {{pokedex.descriptions | getTranslatedDescription:"es"}}
+<div *ngIf="pokedex !== undefined" class="pokedex-container">
+  <h2>{{pokedex.descriptions | getTranslatedDescription:"es"}}</h2>
+  <div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+      <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let pokemon_entry of pokedex.pokemon_entries">
+        <pokemon-card [pokemon_entry]="pokemon_entry"></pokemon-card>
+      </div>
+    </div>
 </div>

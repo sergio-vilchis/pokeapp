@@ -8,14 +8,17 @@ describe('GetTranslatedDescription', () => {
   const pipe = new GetTranslatedDescription();
   let descriptions: Description[] = [
     {
-      language: new BasicURL("","es"),
+      language: new BasicURL(),
       description: "Generación 1",
     },
     {
-      language: new BasicURL("","en"),
+      language: new BasicURL(),
       description: "Generation 1",
     }
   ]
+
+  descriptions[0].language.name="es";
+  descriptions[1].language.name="en";
 
   it('transforms a name to spanish', () => {
     expect(pipe.transform(descriptions,"es")).toBe("Generación 1");
@@ -28,10 +31,11 @@ describe('GetTranslatedDescription', () => {
   it('return empty when language not found and english is not present', () => {
     let descriptions: Description[] = [
       {
-        language: new BasicURL("","es"),
+        language: new BasicURL(),
         description: "Generación 1",
       }
     ]
+    descriptions[0].language.name="es";
     expect(pipe.transform(descriptions,"jpn")).toBe("");
   });
 
