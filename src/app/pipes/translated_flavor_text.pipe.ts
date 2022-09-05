@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { Description } from "../models/description.model";
 import { FlavorTextEntry } from "../models/flavor_text_entry.model";
 
 @Pipe({ name: "getTranslatedFlavorText" })
