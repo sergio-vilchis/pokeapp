@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{data.pokemon.name | uppercase }}</h2>
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="40%" fxFlex.xs="100%" fxFlex.sm="40%" >
+    <img class="poke-sprite" [ngClass]="data.pokemon_species.is_mythical?'mythical':data.pokemon_species.is_legendary?'legendary':''" src="{{data.pokemon.sprites.other.home.front_default}}" alt="{{data.pokemon.name}}"/>
+  </div>
+  <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="60%" mat-dialog-content class="mat-typography">
+    <!-- Types container -->
+    <h2>Tipos</h2>
+    <div fxLayout="row wrap" class="poke-types">
+      <div *ngFor="let type of data.pokemon.types" fxFlex="33%" fxFlex.xs="50%" fxFlex.sm="50%">
+        <img class="{{type.type.name}} poke-type" src="assets/{{type.type.name}}.svg" alt="{{type.type.name}}"/>
+        <span class="type">{{type.type.name | titlecase}}</span>
+      </div>
+    </div>
+    <!-- Stats Container -->
+    <h2>Stats</h2>
+      <div fxLayout="row wrap">
+        <div class="poke-stats"></div>
+        <div *ngFor="let stat of data.pokemon.stats" fxFlex="33%" fxFlex.xs="50%" fxFlex.sm="50%">
+          <h2 class="stat-header">{{stat.stat.name | titlecase}}:{{stat.base_stat}}</h2>
+          <mat-progress-spinner
+              class="stat"
+              [color]="'blue'"
+              [mode]="'determinate'"
+              [value]="stat.base_stat | getStatPercentage"
+              [ngClass]="stat.stat.name">
+          </mat-progress-spinner>
+        </div>
+      </div>
+  </div>

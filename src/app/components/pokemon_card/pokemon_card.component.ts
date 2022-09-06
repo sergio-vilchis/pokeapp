@@ -1,25 +1,27 @@
-import { Component, Injectable, Input } from "@angular/core";
+import { Component, Injectable, Input, Inject } from "@angular/core";
 import { Pokemon } from "src/app/models/pokemon.model";
 import { PokemonEntry } from "src/app/models/pokemon_entry.model";
 import { PokemonSpecies } from "src/app/models/pokemon_species.model";
 import { PokemonSpeciesVariety } from "src/app/models/pokemon_species_variety.model";
 import { PokemonService } from "src/app/services/pokedex/pokemon.service";
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 @Component({
   selector: 'pokemon-card',
   templateUrl: './pokemon_card.component.html',
   styleUrls: ['./pokemon_card.component.css'],
-  providers: [PokemonService]
+  providers: [PokemonService,MatDialog]
 })
 
 @Injectable({  providedIn: "root"})
 export class PokemonCardComponent{
   @Input() pokemon_entry: PokemonEntry;
+  dialogRef: MatDialogRef<PokemonDetailsData>
 
   pokemon_species: PokemonSpecies;
   pokemon: Pokemon;
 
-  constructor(private pokemonService: PokemonService){
+  constructor(private pokemonService: PokemonService, public dialog: MatDialog){
 
   }
 
@@ -42,7 +44,28 @@ export class PokemonCardComponent{
     });
   }
 
+  showPokemonDetails(){
+    if(this.pokemon!==undefined){
+      this.dialogRef = this.dialog.open(PokemonDetailsData, {
+        data: {
+          pokemon: this.pokemon,
+          pokemon_species: this.pokemon_species
+        },
+      });
+    }
+  }
+
   ngOnInit(){
     this.getPokemonSpecies();
   }
 }
+@Component({
+  selector: 'pokemon-details',
+  templateUrl: '../pokemon-details/pokemon-details.component.html',
+  styleUrls: ['../pokemon-details/pokemon-details.component.css'],
+  providers: [MatDialog]
+})
+export class PokemonDetailsData {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+}
+

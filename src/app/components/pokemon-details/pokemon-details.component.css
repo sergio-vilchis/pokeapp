@@ -1,39 +1,35 @@
-.poke-card{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  opacity: 0.1;
-  margin: -16px;
-  cursor: pointer;
+.md-dialog-container {
+  background-color: #000;
+  max-width: 1280px;
+  max-height: 900px
 }
 .poke-sprite{
-  background-color: lightgray;
-  border-color: white;
+  width: 80%;
   border-style: double;
-  border-width: thick;
-  margin-right: 5px;
 }
 .legendary{
-    border-color: goldenrod;
+  border-color: goldenrod;
 }
 .mythical{
   border-color: mediumpurple;
 }
-.poke-header{
-  border-color: black;
-  border-style: solid;
-  height: 20px;
-  margin: 5px;
+.stat-text{
+  margin-left: 50px;
+  position: static;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: xx-large;
+  display: block;
 }
-.poke-subtitle{
-  font-size: 17px;
-  font-style:oblique;
+.type{
+  font-size: large;
+  padding-left: 15px;
+  font-family: cursive;
   font-weight: 600;
 }
 .poke-type{
-  width: 20px;
-  height: 20px;
+  width: 60px;
+  height: 60px;
   margin: 4px 4px 4px;
 }
 

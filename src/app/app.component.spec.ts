@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
@@ -42,5 +43,30 @@ describe('AppComponent', () => {
     appComponent.pokedexFetch(pokedex);
     expect(pokedex).toEqual(appComponent.pokedex);
     done();
+  });
+
+  it('should scroll', (done: DoneFn)=> {
+    const fixture = TestBed.createComponent(AppComponent);
+    let appComponent: AppComponent = fixture.debugElement.componentInstance;
+    appComponent.scrollToTop();
+    expect(appComponent.windowScrolled).toBeFalsy();
+    done();
+  });
+
+  it('should scroll', (done: DoneFn)=> {
+    const fixture = TestBed.createComponent(AppComponent);
+    let appComponent: AppComponent = fixture.debugElement.componentInstance;
+
+    appComponent.onScroll({
+      currentTarget: {
+        scrollY: 31
+      }
+    } as any);
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(appComponent.windowScrolled).toBeTruthy();
+      done();
+    });
   });
 });
