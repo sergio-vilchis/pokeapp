@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, Inject, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, Injectable, Input, Inject } from "@angular/core";
 import { Pokemon } from "src/app/models/pokemon.model";
 import { PokemonEntry } from "src/app/models/pokemon_entry.model";
 import { PokemonSpecies } from "src/app/models/pokemon_species.model";

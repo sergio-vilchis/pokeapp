@@ -17,7 +17,7 @@ export class AppComponent {
 
   ngOnInit(){
     window.addEventListener('scroll', () => {
-      this.windowScrolled = window.pageYOffset !== 0;
+      this.windowScrolled = window.scrollY !== 0;
     });
   }
 
