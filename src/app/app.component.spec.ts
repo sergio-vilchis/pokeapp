@@ -49,20 +49,23 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     let appComponent: AppComponent = fixture.debugElement.componentInstance;
     appComponent.scrollToTop();
-    expect(appComponent.windowScrolled).toBeFalse;
+    expect(appComponent.windowScrolled).toBeFalsy();
     done();
   });
 
   it('should scroll', (done: DoneFn)=> {
     const fixture = TestBed.createComponent(AppComponent);
     let appComponent: AppComponent = fixture.debugElement.componentInstance;
-    const container = fixture.debugElement.query(By.css('.main-container'));
 
-    container.nativeElement.scroll();
+    appComponent.onScroll({
+      currentTarget: {
+        scrollY: 31
+      }
+    } as any);
     fixture.detectChanges();
 
     fixture.whenStable().then(() => {
-      expect(appComponent.windowScrolled).toBeTrue
+      expect(appComponent.windowScrolled).toBeTruthy();
       done();
     });
   });

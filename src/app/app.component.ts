@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Pokedex } from './models/pokedex.model';
 @Component({
   selector: 'app-root',
@@ -16,9 +16,12 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    window.addEventListener('scroll', () => {
-      this.windowScrolled = window.scrollY !== 0;
-    });
+
+  }
+
+  @HostListener('window:scroll', ["$event"]) onScroll(event: Event) {
+    let window = event.currentTarget as Window;
+    this.windowScrolled = window.scrollY !== 0;
   }
 
   scrollToTop(): void {
