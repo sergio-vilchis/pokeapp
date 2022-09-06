@@ -9,4 +9,7 @@
   <generation-list (pokedexEvent)="pokedexFetch($event)"></generation-list>
   <pokedex [pokedex]="pokedex"></pokedex>
 </div>
+<div class="to-top" (click)="scrollToTop()" [ngClass]="{ 'show-scrollTop': windowScrolled }">
+  <img class = "to-top-img" src="assets/back-button.png" alt="to-top-icon" />
+</div>
 <router-outlet></router-outlet>

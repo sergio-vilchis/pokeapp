@@ -43,4 +43,12 @@ describe('AppComponent', () => {
     expect(pokedex).toEqual(appComponent.pokedex);
     done();
   });
+
+  it('should scroll', (done: DoneFn)=> {
+    const fixture = TestBed.createComponent(AppComponent);
+    let appComponent: AppComponent = fixture.debugElement.componentInstance;
+    appComponent.scrollToTop();
+    expect(appComponent.windowScrolled).toBeFalse;
+    done();
+  });
 });

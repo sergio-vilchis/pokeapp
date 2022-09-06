@@ -7,10 +7,24 @@ import { Pokedex } from './models/pokedex.model';
 })
 
 export class AppComponent {
+  windowScrolled = false;
   title = 'Pokéapp';
   pokedex: Pokedex;
 
   pokedexFetch(pokedex: Pokedex){
     this.pokedex = pokedex;
+  }
+
+  ngOnInit(){
+    window.addEventListener('scroll', () => {
+      this.windowScrolled = window.pageYOffset !== 0;
+    });
+  }
+
+  scrollToTop(): void {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }
