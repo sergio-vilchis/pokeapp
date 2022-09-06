@@ -11,6 +11,7 @@ import { PokemonSpecies } from "./pokemon_species.model";
 import { PokemonSpeciesVariety } from "./pokemon_species_variety.model";
 import { PokemonSprites } from "./pokemon_sprites.model";
 import { Region } from "./region.model";
+import { Stat } from "./stat.model";
 import { Type } from "./type.model";
 
 describe('Models testing', () => {
@@ -57,6 +58,9 @@ describe('Models testing', () => {
 
     let type = new Type();
     expect(type).toBeDefined();
+
+    let stat = new Stat();
+    expect(stat).toBeDefined();
 
   });
 });

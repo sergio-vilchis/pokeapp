@@ -18,9 +18,15 @@ import { GetTranslatedDescription } from './pipes/translated_description.pipe';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { PokemonCardComponent } from './components/pokemon_card/pokemon_card.component';
+import { PokemonCardComponent, PokemonDetailsData } from './components/pokemon_card/pokemon_card.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { GetTranslatedFlavorText } from './pipes/translated_flavor_text.pipe';
+import {MatRippleModule} from '@angular/material/core';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { GetStatPercentage } from './pipes/stat_percentage.pipe';
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,9 @@ import { GetTranslatedFlavorText } from './pipes/translated_flavor_text.pipe';
     PokemonCardComponent,
     GetTranslatedName,
     GetTranslatedDescription,
-    GetTranslatedFlavorText
+    GetTranslatedFlavorText,
+    GetStatPercentage,
+    PokemonDetailsData
   ],
   imports: [
     BrowserModule,
@@ -45,9 +53,13 @@ import { GetTranslatedFlavorText } from './pipes/translated_flavor_text.pipe';
     MatToolbarModule,
     MatIconModule,
     MatGridListModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatRippleModule,
+    OverlayModule,
+    MatDialogModule,
+    MatProgressSpinnerModule
   ],
-  providers: [ServiceUtils],
+  providers: [ServiceUtils, MatDialogModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

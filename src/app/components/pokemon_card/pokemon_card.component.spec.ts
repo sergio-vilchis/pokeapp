@@ -55,4 +55,14 @@ describe('PokemonCardComponent', () => {
       done();
     });
   });
+
+  it('should display pokemon details',(done: DoneFn)=> {
+    pokemonCardComponent.getPokemon(pokemon_species.varieties[0].pokemon.url)
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      pokemonCardComponent.showPokemonDetails()
+      expect(pokemonCardComponent.dialogRef).toBeTruthy()
+      done();
+    });
+  });
 });

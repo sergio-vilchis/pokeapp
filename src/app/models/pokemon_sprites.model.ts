@@ -1,3 +1,5 @@
+import { OtherSprite } from "./other_sprite.model";
+
 export class PokemonSprites{
   back_default: string;
   back_female: string;
@@ -7,4 +9,5 @@ export class PokemonSprites{
   front_female: string;
   front_shiny: string;
   front_shiny_female: string;
+  other: OtherSprite;
 }
