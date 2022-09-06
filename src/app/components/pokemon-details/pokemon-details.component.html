@@ -2,7 +2,7 @@
 <div class="content">
   <div fxLayout="row wrap" fxLayoutGap="16px grid">
   <div fxFlex="40%" fxFlex.xs="100%" fxFlex.sm="40%" >
-    <img class="poke-sprite" [ngClass]="data.pokemon_species.is_mythical?'mythical':data.pokemon_species.is_legendary?'legendary':''" src="{{data.pokemon.sprites.other.home.front_default}}"/>
+    <img class="poke-sprite" [ngClass]="data.pokemon_species.is_mythical?'mythical':data.pokemon_species.is_legendary?'legendary':''" src="{{data.pokemon.sprites.other.home.front_default}}" alt="{{data.pokemon.name}}"/>
   </div>
   <div fxFlex="60%" fxFlex.xs="100%" fxFlex.sm="60%" mat-dialog-content class="mat-typography">
     <!-- Types container -->

@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { AppModule } from './app.module';
@@ -50,5 +51,19 @@ describe('AppComponent', () => {
     appComponent.scrollToTop();
     expect(appComponent.windowScrolled).toBeFalse;
     done();
+  });
+
+  it('should scroll', (done: DoneFn)=> {
+    const fixture = TestBed.createComponent(AppComponent);
+    let appComponent: AppComponent = fixture.debugElement.componentInstance;
+    const container = fixture.debugElement.query(By.css('.main-container'));
+
+    container.nativeElement.scroll();
+    fixture.detectChanges();
+
+    fixture.whenStable().then(() => {
+      expect(appComponent.windowScrolled).toBeTrue
+      done();
+    });
   });
 });
